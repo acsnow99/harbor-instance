@@ -32,8 +32,3 @@ variable "configfile" {
     type = "string"
     description = "File Harbor looks at when installing. Titled 'harbor.yml' when Harbor is downloaded"
 }
-
-variable "credentials-file" {
-    type = "string"
-    default = "~/terraform/terraform_keys/terraform-gcp-harbor-80a453b96ca7.json"
-}

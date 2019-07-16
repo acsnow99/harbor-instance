@@ -1,5 +1,5 @@
 provider "google" {
-    credentials = "${file(var.credentials-file)}"
+    credentials = "${file("~/terraform/terraform_keys/terraform-gcp-harbor-80a453b96ca7.json")}"
     project = "terraform-gcp-harbor"
     region = "${var.region}"
     zone = "${var.region}-a"
