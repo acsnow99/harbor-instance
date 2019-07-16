@@ -1,5 +1,5 @@
 provider "google" {
-    credentials = "${file("~/terraform/terraform_keys/terraform-gcp-harbor-80a453b96ca7.json")}"
+    credentials = "${file(var.credentials-file)}"
     project = "terraform-gcp-harbor"
     region = "${var.region}"
     zone = "${var.region}-a"
@@ -20,7 +20,7 @@ module "harbor-instance" {
     node_count = "${var.node_count}"
     configfile = "${var.configfile}"
     prefix = "${var.prefix}-harbor"
-    image = "${lookup(var.image, var.prefix)}"
+    image = "${var.image}"
     commandfile = "${var.commandfile}"
     machine = "${var.machine}"
 }

@@ -13,12 +13,8 @@ variable "node_count" {
 }
 
 variable "image" {
-    type = "map"
-    default = {
-        "debian-vm" = "debian-cloud/debian-9"
-        "ubuntu-vm" = "ubuntu-1604-xenial-v20190617"
-        "harbor-ubuntu-vm" = "ubuntu-1604-xenial-v20190617"
-    }
+    type = "string"
+    default = "ubuntu-1604-xenial-v20190617"
 }
 variable "machine" {
     description = "Type of GCP machine to make the nodes on"
@@ -31,4 +27,9 @@ variable "commandfile" {
 variable "configfile" {
     type = "string"
     description = "File Harbor looks at when installing. Titled 'harbor.yml' when Harbor is downloaded"
+}
+
+variable "credentials-file" {
+    type = "string"
+    default = "~/terraform/terraform_keys/terraform-gcp-harbor-80a453b96ca7.json"
 }
