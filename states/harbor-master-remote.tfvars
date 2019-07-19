@@ -1,4 +1,4 @@
-prefix = "harbor-ubuntu-layer2"
+prefix = "harbor-ubuntu-managed"
 node_count = "1"
 commandfile = "dockerce-harbor-master-install.sh"
 configfile = "harbor-master.yml"
