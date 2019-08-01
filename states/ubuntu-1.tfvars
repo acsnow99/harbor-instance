@@ -1,5 +1,4 @@
-region = "us-west1"
 prefix = "harbor-ubuntu-vm"
 node_count = "1"
-commandfile = "dockeree-harbor_install.sh"
-configfile = "harbor.yml"
+commandfile = "resources/dockeree-harbor_install.sh"
+configfile = "resources/harbor.yml"

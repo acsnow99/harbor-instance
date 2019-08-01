@@ -1,4 +1,4 @@
 prefix = "harbor-ubuntu"
 node_count = "1"
-commandfile = "dockerce-harbor-master-install.sh"
-configfile = "harbor-master.yml"
+commandfile = "resources/dockerce-harbor-master-install.sh"
+configfile = "resources/harbor-master.yml"
