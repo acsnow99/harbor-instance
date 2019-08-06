@@ -1,5 +1,5 @@
 variable "node_count" {
-    description = "If a slave, how many slaves"
+    description = "How many Harbors"
 }
 
 variable "configfile" {
@@ -21,4 +21,14 @@ variable "commandfile" {
 variable "machine" {
     description = "Type of GCP machine to create the node on"
     default = "n1-standard-4"
+}
+
+variable "ssh_user" {
+
+}
+variable "ssh_public_key" {
+
+}
+variable "ssh_private_key" {
+
 }

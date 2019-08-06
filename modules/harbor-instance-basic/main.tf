@@ -38,7 +38,7 @@ resource "google_compute_instance" "harbor" {
     }
 
     metadata = {
-        ssh-keys = "alexsnow:${file("~/.ssh/id_rsa.pub")}"
+        ssh-keys = "${var.ssh_user}:${file("${var.ssh_public_key}")}"
     }
 }
 
@@ -49,7 +49,7 @@ resource "null_resource" "install-harbor" {
             type = "ssh"
             host = "${google_compute_instance.harbor[count.index].network_interface.0.access_config.0.nat_ip}"
             user = "alexsnow"
-            private_key = "${file("~/.ssh/id_rsa")}"
+            private_key = "${file("${var.ssh_private_key}")}"
     }
     provisioner "file" {
         content = "${data.template_file.install-config-ip[count.index].rendered}"

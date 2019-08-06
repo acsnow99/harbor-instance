@@ -33,3 +33,15 @@ variable "credentials-file" {
     type = "string"
     default = "~/terraform/terraform_keys/terraform-gcp-harbor-80a453b96ca7.json"
 }
+
+variable "ssh_user" {
+    description = "The username linked with your ssh keys"
+}
+variable "ssh_public_key" {
+    description = "Path to your public ssh key"
+    default = "~/.ssh/id_rsa.pub"
+}
+variable "ssh_private_key" {
+    description = "Path to your private ssh key"
+    default = "~/.ssh/id_rsa"
+}
