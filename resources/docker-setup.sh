@@ -17,7 +17,7 @@ ip=$(terraform output | tr -d "instance-ip = -")
 #sudo rm *.crt *.srl *.cnf *.csr *.key
 
 # get the cert from the instance(on Mac)
-scp -i /home/alexsnow/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -v alexsnow@$ip:~/ca.crt .
+scp -i /Users/alexsnow/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -v alexsnow@$ip:~/ca.crt .
 sudo mkdir ~/.docker/certs.d/$ip
 sudo mv ca.crt ~/.docker/certs.d/$ip/ca.crt
 
