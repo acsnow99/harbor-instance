@@ -4,7 +4,7 @@ data "template_file" "install-config-ip" {
     template = "${file("${var.configfile}")}"
     
     vars = {
-        host-ip = "${google_compute_instance.harbor[count.index].network_interface.0.access_config.0.nat_ip}"
+        host-ip = "${var.hostname}"
     }
 }
 

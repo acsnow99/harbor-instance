@@ -56,3 +56,7 @@ variable "network" {
 variable "subnet" {
     default = "default"
 }
+
+variable "hostname" {
+    default = "core.harbor.domain"
+}

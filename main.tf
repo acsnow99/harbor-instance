@@ -29,4 +29,5 @@ module "harbor-instance" {
     ssh_public_key = "${var.ssh_public_key}"
     network = "${var.network}"
     subnet = "${var.subnet}"
+    hostname = "${var.hostname}"
 }
