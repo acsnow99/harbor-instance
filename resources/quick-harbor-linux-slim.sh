@@ -9,7 +9,7 @@ scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -v alexsnow@$ip:
 mkdir /etc/docker/certs.d/core.harbor.domain
 mv ca.crt /etc/docker/certs.d/core.harbor.domain/
 
-echo "'${ip}' core.harbor.domain" >> /etc/hosts
+echo "${ip} core.harbor.domain" >> /etc/hosts
 
 # Restart the Docker daemon
 service docker restart
