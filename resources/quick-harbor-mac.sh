@@ -1,5 +1,5 @@
 terraform init
-yes yes | terraform apply -var-file=states/harbor-master.tfvars
+yes yes | terraform apply -var-file=states/harbor-master-mac.tfvars
 
 ip=$(terraform output | tr -d "instance-ip = -")
 
