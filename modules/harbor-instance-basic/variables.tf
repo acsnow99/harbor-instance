@@ -32,3 +32,10 @@ variable "ssh_public_key" {
 variable "ssh_private_key" {
 
 }
+
+variable "network" {
+    default = "default"
+}
+variable "subnet" {
+    default = "default"
+}
