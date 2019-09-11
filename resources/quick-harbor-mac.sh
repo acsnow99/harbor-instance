@@ -1,7 +1,11 @@
-ip=35.247.2.44
+terraform init
+yes yes | terraform apply -var-file=states/harbor-master.tfvars
 
-# get the cert from the instance(on Mac)
+ip=$(terraform output | tr -d "instance-ip = -")
+
+# get the cert from the instance
 scp -i /Users/alexsnow/.ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -v alexsnow@$ip:~/ca.crt .
+sudo mkdir ~/.docker/certs.d
 sudo mkdir ~/.docker/certs.d/$ip
 sudo mv ca.crt ~/.docker/certs.d/$ip/ca.crt
 
