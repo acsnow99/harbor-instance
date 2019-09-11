@@ -1,6 +1,6 @@
 prefix = "harbor-ubuntu-jenkins"
 node_count = "1"
-commandfile = "resources/dockerce-harbor-master-install.sh"
+commandfile = "resources/dockerce-harbor-master-install-jenkins.sh"
 configfile = "resources/harbor-master.yml"
 credentials-file = "/keys/terraform-gcp-harbor-2-72245571699e.json"
 ssh_user = "alexsnow"
