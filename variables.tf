@@ -45,3 +45,14 @@ variable "ssh_private_key" {
     description = "Path to your private ssh key"
     default = "~/.ssh/id_rsa"
 }
+
+variable "project" {
+    
+}
+
+variable "network" {
+    default = "default"
+}
+variable "subnet" {
+    default = "default"
+}

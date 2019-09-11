@@ -1,13 +1,13 @@
 provider "google" {
     credentials = "${file(var.credentials-file)}"
-    project = "terraform-gcp-harbor"
+    project = "${var.project}"
     region = "${var.region}"
     zone = "${var.region}-a"
 }
 
 resource "google_compute_firewall" "default" {
     name = "${var.prefix}-firewall"
-    network = "terraform-gcp-harbor"
+    network = "${var.network}"
     
     allow {
         protocol = "tcp"
@@ -27,4 +27,6 @@ module "harbor-instance" {
     ssh_user = "${var.ssh_user}"
     ssh_private_key = "${var.ssh_private_key}"
     ssh_public_key = "${var.ssh_public_key}"
+    network = "${var.network}"
+    subnet = "${var.subnet}"
 }
