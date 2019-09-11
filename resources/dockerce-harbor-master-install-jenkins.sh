@@ -14,8 +14,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 3650 -out ca.crt -subj "/C=US/ST=Oregon/L=Portland/0=IGNW/OU=Devops/CN=core.harbor.domain"
 openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.gcp.key -out harbor.gcp.csr -subj "/C=US/ST=Oregon/L=Portland/0=IGNW/OU=Devops/CN=core.harbor.domain"
 touch extfile.cnf
-echo subjectAltName = IP:${host-ip} > extfile.cnf
-openssl x509 -req -days 3650 -in harbor.gcp.csr -CA ca.crt -CAkey ca.key -CAcreateserial -extfile extfile.cnf -out harbor.gcp.crt
+#echo subjectAltName = IP:${host-ip} > extfile.cnf
+# -extfile extfile.cnf
+openssl x509 -req -days 3650 -in harbor.gcp.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out harbor.gcp.crt
 sudo mkdir etc/ssl/certs
 sudo cp *.crt *.key /etc/ssl/certs
 
