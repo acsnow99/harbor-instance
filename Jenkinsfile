@@ -8,5 +8,5 @@ node('docker') {
         sh "yes yes | terraform destroy -var-file=states/harbor-master-jenkins.tfvars"
 
     stage 'Integration Test'
-        sh "bash resources/quick-harbor-linux.sh"
+        sh "bash resources/quick-harbor-linux-slim.sh"
 }
