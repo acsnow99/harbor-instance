@@ -25,7 +25,7 @@ killall Docker && open /Applications/Docker.app
 
 sleep 60
 
-# login to harbor and push a test image
+# login to harbor through docker and push a test image
 sudo docker login --username admin --password Harbor12345 $ip
 sudo docker tag hello-world:latest $ip/library/hello-world:latest
 sudo docker push $ip/library/hello-world:latest
