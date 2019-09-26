@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"harbor-instance","Source":"./modules/harbor-instance-basic","Dir":"modules/harbor-instance-basic"},{"Key":"","Source":"","Dir":"."},{"Key":"harbor-node","Source":"./modules/harbor-instance-basic","Dir":"modules/harbor-instance-basic"}]}
