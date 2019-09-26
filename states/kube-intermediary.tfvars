@@ -1,6 +1,0 @@
-prefix = "harbor-intermediary"
-node_count = "1"
-commandfile = "resources/dockerce-harbor-master-install.sh"
-configfile = "resources/harbor-master.yml"
-credentials-file = "~/terraform/terraform_keys/terraform-gcp-harbor-0c21396cd9f7.json"
-ssh_user = "alexsnow"

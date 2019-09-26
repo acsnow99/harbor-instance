@@ -1,6 +1,6 @@
 # the Harbor host is itself; config file has host field set to its ip address
 data "template_file" "install-config-ip" {
-    count = "${var.node_count}"
+    
     template = "${file("${var.configfile}")}"
     
     vars = {
@@ -9,19 +9,19 @@ data "template_file" "install-config-ip" {
 }
 
 data "template_file" "install-command-ip" {
-    count = "${var.node_count}"
+    
     template = "${file("${var.commandfile}")}"
     
     vars = {
-        host-ip = "${google_compute_instance.harbor[count.index].network_interface.0.access_config.0.nat_ip}"
+        host-ip = "${google_compute_instance.harbor.network_interface.0.access_config.0.nat_ip}"
     }
 }
 
 # Create Harbor node
 resource "google_compute_instance" "harbor" {
-    name = "${var.prefix}-${count.index}"
+    name = "${var.prefix}"
     machine_type = "${var.machine}"
-    count = "${var.node_count}"
+    
     allow_stopping_for_update = "true"
     boot_disk {
          initialize_params {
@@ -44,19 +44,19 @@ resource "google_compute_instance" "harbor" {
 
 # installs Harbor and other necessary tools
 resource "null_resource" "install-harbor" {
-    count = "${var.node_count}"
+    
     connection {
             type = "ssh"
-            host = "${google_compute_instance.harbor[count.index].network_interface.0.access_config.0.nat_ip}"
+            host = "${google_compute_instance.harbor.network_interface.0.access_config.0.nat_ip}"
             user = "alexsnow"
             private_key = "${file("${var.ssh_private_key}")}"
     }
     provisioner "file" {
-        content = "${data.template_file.install-config-ip[count.index].rendered}"
+        content = "${data.template_file.install-config-ip.rendered}"
         destination = "/tmp/harbor-config.yml"
     }
     provisioner "file" {
-        content = "${data.template_file.install-command-ip[count.index].rendered}"
+        content = "${data.template_file.install-command-ip.rendered}"
         destination = "/tmp/run-command.sh"
     }
     provisioner "remote-exec" {

@@ -8,10 +8,6 @@ variable "prefix" {
     default = "google-cloud-compute"
 }
 
-variable "node_count" {
-    default = "0"
-}
-
 variable "image" {
     type = "string"
     default = "ubuntu-1604-xenial-v20190617"

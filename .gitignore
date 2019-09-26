@@ -2,3 +2,6 @@
 creds
 .terraform
 certs
+hosts-copy
+.gitignore
+.dockerignore

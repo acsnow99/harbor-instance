@@ -1,10 +1,11 @@
 prefix = "harbor-ubuntu"
-node_count = "1"
-commandfile = "resources/dockerce-harbor-master-install.sh"
+commandfile = "resources/dockerce-harbor-master-install-V2.sh"
 configfile = "resources/harbor-master.yml"
-credentials-file = "~/Downloads/terraform-gcp-harbor-2-72245571699e.json"
+credentials-file = "/Users/alexsnow/terraform/terraform_keys/terraform-gcp-harbor-2-3ca67fec4859.json"
 ssh_user = "alexsnow"
 project = "terraform-gcp-harbor-2"
+
+machine = "n1-standard-2"
 
 network = "terraform-gcp-harbor"
 subnet = "harbor-1"

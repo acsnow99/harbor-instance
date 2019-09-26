@@ -1,6 +1,3 @@
-variable "node_count" {
-    description = "How many Harbors"
-}
 
 variable "configfile" {
     description = "File Harbor looks at when installing. Titled 'harbor.yml' when Harbor is downloaded"

@@ -18,7 +18,6 @@ resource "google_compute_firewall" "default" {
 module "harbor-instance" {
     source = "./modules/harbor-instance-basic"
 
-    node_count = "${var.node_count}"
     configfile = "${var.configfile}"
     prefix = "${var.prefix}-harbor"
     image = "${var.image}"
